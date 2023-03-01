@@ -1,7 +1,8 @@
 <script setup>
 import { useSlots, ref , provide, onMounted} from 'vue'
-import { useRouter }from 'vue-router';
+import { useRoute, useRouter }from 'vue-router';
 
+const route = useRoute();
 const router = useRouter()
 const slots = useSlots()
 const tabTitles = ref(slots.default().map(tab => tab.props.title))
@@ -16,8 +17,9 @@ function setTabActive(tabTitle){
 }
 
 onMounted(()=>{
-  const { hash }  = window.location
+  const { hash }  = route
   if(hash) {
+
     setTabActive(hash.split('#')[1])
   } else {
     setTabActive(selectedTitle.value)

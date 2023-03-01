@@ -1,14 +1,5 @@
-<script setup>
-import Tabs from './components/Tabs.vue'
-import Tab from './components/Tab.vue'
-</script>
-
 <template>
-    <Tabs>
-        <Tab title="vue">Content of Vue Tab</Tab>
-        <Tab title="html">Content of HTML Tab</Tab>
-        <Tab title="scss">Content of SCSS Tab</Tab>
-    </Tabs>
+<router-view />
 </template>
 
 <style>
