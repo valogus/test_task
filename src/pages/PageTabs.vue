@@ -1,9 +1,9 @@
 <template>
   <h1>Tabs</h1>
   <Tabs>
-    <Tab title="Vue" id="vue">Content of Vue Tab</Tab>
-    <Tab title="HTML" id="html">Content of HTML Tab</Tab>
-    <Tab title="SCSS" id="scss">Content of SCSS Tab</Tab>
+    <Tab title="Vue" >Content of Vue Tab</Tab>
+    <Tab title="HTML" >Content of HTML Tab</Tab>
+    <Tab title="SCSS" >Content of SCSS Tab</Tab>
   </Tabs>
 </template>
 
