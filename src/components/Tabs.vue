@@ -1,12 +1,32 @@
 <script setup>
-import { useSlots, ref , provide} from 'vue'
+import { useSlots, ref , provide, onMounted} from 'vue'
+import { useRouter }from 'vue-router';
 
+const router = useRouter()
 const slots = useSlots()
 const tabTitles = ref(slots.default().map(tab => tab.props.title))
 const selectedTitle = ref(tabTitles.value[0])
 
 provide('selectedTitle', selectedTitle)
+
+
+function setTabActive(tabTitle){
+    selectedTitle.value = tabTitle
+   router.push({ hash:'#' + tabTitle })
+}
+
+onMounted(()=>{
+  const { hash }  = window.location
+  if(hash) {
+    setTabActive(hash.split('#')[1])
+  } else {
+    setTabActive(selectedTitle.value)
+  }
+
+})
 </script>
+
+
 
 <template>
     <div class="tabs">
@@ -18,7 +38,7 @@ provide('selectedTitle', selectedTitle)
                 :key="title"
                 class="tabs__item"
                 :class="{ selected: selectedTitle === title}"
-                @click="selectedTitle = title"
+                @click="setTabActive(title)"
             >
                 {{ title }}
             </li>

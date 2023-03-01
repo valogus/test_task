@@ -5,9 +5,9 @@ import Tab from './components/Tab.vue'
 
 <template>
     <Tabs>
-        <Tab title="Vue">Content of Vue Tab</Tab>
-        <Tab title="HTML">Content of HTML Tab</Tab>
-        <Tab title="SCSS">Content of SCSS Tab</Tab>
+        <Tab title="vue">Content of Vue Tab</Tab>
+        <Tab title="html">Content of HTML Tab</Tab>
+        <Tab title="scss">Content of SCSS Tab</Tab>
     </Tabs>
 </template>
 
