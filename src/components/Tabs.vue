@@ -19,7 +19,6 @@ function setTabActive(tabTitle){
 onMounted(()=>{
   const { hash }  = route
   if(hash) {
-
     setTabActive(hash.split('#')[1])
   } else {
     setTabActive(selectedTitle.value)
